@@ -1,0 +1,16 @@
+Change Component Comment : Designator=* Old Comment=DRV825 New Comment=DRV8225
+Change Component Designator: OldDesignator=* NewDesignator=U18
+Change Net Name : Old Net Name=Net*_1 New Net Name=NetC46_1
+Change Net Name : Old Net Name=Net*_2 New Net Name=NetC46_2
+Change Net Name : Old Net Name=Net*_3 New Net Name=NetC47_2
+Change Net Name : Old Net Name=Net*_5 New Net Name=NetJ3_30
+Change Net Name : Old Net Name=Net*_6 New Net Name=NetR127_2
+Change Net Name : Old Net Name=Net*_7 New Net Name=NetJ3_32
+Change Net Name : Old Net Name=Net*_8 New Net Name=NetJ3_1
+Change Net Name : Old Net Name=Net*_9 New Net Name=NetR130_2
+Change Net Name : Old Net Name=Net*_10 New Net Name=NetJ3_4
+Change Net Name : Old Net Name=Net*_12 New Net Name=NetR131_1
+Change Net Name : Old Net Name=Net*_15 New Net Name=NetC48_2
+Change Net Name : Old Net Name=Net*_20 New Net Name=NetU1_18
+Change Net Name : Old Net Name=Net*_21 New Net Name=NetU1_17
+Change Net Name : Old Net Name=Net*_22 New Net Name=NetU1_19

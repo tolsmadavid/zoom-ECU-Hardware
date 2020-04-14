@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=NetD1_2 Pin=U2-1
+Removed Pin From Net: NetName=GND Pin=U2-3
+Removed Pin From Net: NetName=NetC3_2 Pin=U2-4
+Removed Pin From Net: NetName=NetR2_1 Pin=U2-5
+Removed Pin From Net: NetName=GND Pin=U2-7
+Removed Pin From Net: NetName=12V Pin=U2-8
+Removed Pin From Net: NetName=GND Pin=U2-9
+Removed Member From Class: ClassName=Power_Communications_MCU Member=U2
+Change Component Comment : Designator=R146 Old Comment=2M  New Comment=2M
+Change Component Comment : Designator=R104 Old Comment=4R99  New Comment=4R99

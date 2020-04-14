@@ -1,0 +1,152 @@
+Change Component Footprint: Designator=R16 Old Footprint=RESC0603(1608)_M New Footprint=RESC1206(3216)_L
+Change Component Footprint: Designator=R17 Old Footprint=RESC0603(1608)_M New Footprint=RESC1206(3216)_L
+Change Component Footprint: Designator=R26 Old Footprint=RESC0603(1608)_M New Footprint=RESC1206(3216)_L
+Change Component Footprint: Designator=R27 Old Footprint=RESC0603(1608)_M New Footprint=RESC1206(3216)_L
+Change Component Footprint: Designator=R32 Old Footprint=RESC0603(1608)_M New Footprint=RESC1206(3216)_L
+Change Component Footprint: Designator=R33 Old Footprint=RESC0603(1608)_M New Footprint=RESC1206(3216)_L
+Change Component Footprint: Designator=R42 Old Footprint=RESC0603(1608)_M New Footprint=RESC1206(3216)_L
+Change Component Footprint: Designator=R43 Old Footprint=RESC0603(1608)_M New Footprint=RESC1206(3216)_L
+Change Component Footprint: Designator=R88 Old Footprint=RESC0603(1608)_M New Footprint=RESC1206(3216)_L
+Change Component Footprint: Designator=R89 Old Footprint=RESC0603(1608)_M New Footprint=RESC1206(3216)_L
+Change Component Footprint: Designator=R96 Old Footprint=RESC0603(1608)_M New Footprint=RESC1206(3216)_L
+Change Component Footprint: Designator=R97 Old Footprint=RESC0603(1608)_M New Footprint=RESC1206(3216)_L
+Change Component Footprint: Designator=R104 Old Footprint=RESC0603(1608)_M New Footprint=RESC1206(3216)_L
+Change Component Footprint: Designator=R105 Old Footprint=RESC0603(1608)_M New Footprint=RESC1206(3216)_L
+Change Component Footprint: Designator=R112 Old Footprint=RESC0603(1608)_M New Footprint=RESC1206(3216)_L
+Change Component Footprint: Designator=R113 Old Footprint=RESC0603(1608)_M New Footprint=RESC1206(3216)_L
+Change Component Comment : Designator=R16 Old Comment=220R New Comment=100R
+Change Component Comment : Designator=R17 Old Comment=220R New Comment=100R
+Change Component Comment : Designator=R26 Old Comment=220R New Comment=100R
+Change Component Comment : Designator=R27 Old Comment=220R New Comment=100R
+Change Component Comment : Designator=R32 Old Comment=220R New Comment=100R
+Change Component Comment : Designator=R33 Old Comment=220R New Comment=100R
+Change Component Comment : Designator=R42 Old Comment=220R New Comment=100R
+Change Component Comment : Designator=R43 Old Comment=220R New Comment=100R
+Change component parameters: Designator = "R88"; Footprint = "RESC1206(3216)_L"; UniqueID = "\RGOOAOHE"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Case-EIA"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case-Metric"; Value = "3216"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "0.25 W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1 %"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100.00 Ohm"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R89"; Footprint = "RESC1206(3216)_L"; UniqueID = "\GHNNOELB"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Case-EIA"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case-Metric"; Value = "3216"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "0.25 W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1 %"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100.00 Ohm"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R96"; Footprint = "RESC1206(3216)_L"; UniqueID = "\KMJVBSDQ"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Case-EIA"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case-Metric"; Value = "3216"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "0.25 W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1 %"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100.00 Ohm"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R97"; Footprint = "RESC1206(3216)_L"; UniqueID = "\HHAVWYFL"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Case-EIA"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case-Metric"; Value = "3216"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "0.25 W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1 %"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100.00 Ohm"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R104"; Footprint = "RESC1206(3216)_L"; UniqueID = "\CCKWUIKC"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Case-EIA"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case-Metric"; Value = "3216"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "0.25 W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1 %"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100.00 Ohm"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R105"; Footprint = "RESC1206(3216)_L"; UniqueID = "\ALVDWDKA"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Case-EIA"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case-Metric"; Value = "3216"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "0.25 W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1 %"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100.00 Ohm"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R112"; Footprint = "RESC1206(3216)_L"; UniqueID = "\FGQFIUJQ"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Case-EIA"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case-Metric"; Value = "3216"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "0.25 W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1 %"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100.00 Ohm"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R113"; Footprint = "RESC1206(3216)_L"; UniqueID = "\LRPEKRBH"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Case-EIA"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case-Metric"; Value = "3216"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "0.25 W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1 %"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100.00 Ohm"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R16"; Footprint = "RESC1206(3216)_L"; UniqueID = "\TJNECTOK"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Case-EIA"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case-Metric"; Value = "3216"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "0.25 W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1 %"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100.00 Ohm"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R17"; Footprint = "RESC1206(3216)_L"; UniqueID = "\ILMEGGLG"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Case-EIA"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case-Metric"; Value = "3216"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "0.25 W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1 %"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100.00 Ohm"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R26"; Footprint = "RESC1206(3216)_L"; UniqueID = "\FKBUYDSM"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Case-EIA"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case-Metric"; Value = "3216"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "0.25 W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1 %"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100.00 Ohm"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R27"; Footprint = "RESC1206(3216)_L"; UniqueID = "\EFAJBXCH"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Case-EIA"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case-Metric"; Value = "3216"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "0.25 W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1 %"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100.00 Ohm"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R32"; Footprint = "RESC1206(3216)_L"; UniqueID = "\PBXWFPJS"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Case-EIA"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case-Metric"; Value = "3216"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "0.25 W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1 %"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100.00 Ohm"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R33"; Footprint = "RESC1206(3216)_L"; UniqueID = "\UNAGNLVA"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Case-EIA"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case-Metric"; Value = "3216"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "0.25 W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1 %"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100.00 Ohm"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R42"; Footprint = "RESC1206(3216)_L"; UniqueID = "\WBIGGKUJ"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Case-EIA"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case-Metric"; Value = "3216"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "0.25 W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1 %"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100.00 Ohm"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R43"; Footprint = "RESC1206(3216)_L"; UniqueID = "\XQMSAPNW"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Case-EIA"; Value = "1206"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case-Metric"; Value = "3216"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = "0.25 W"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "SMT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1 %"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100.00 Ohm"; VariantName = "[No Variations]"

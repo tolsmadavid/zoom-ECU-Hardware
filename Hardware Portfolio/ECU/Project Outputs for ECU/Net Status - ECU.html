@@ -1,0 +1,1430 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 { 
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body { 
+			font-family : segoe ui;
+		}
+
+		td, th {  
+			padding: 0.5em;
+			text-align : left;
+		}
+		th { 
+			background-color : #EEEEEE;
+		
+		}
+		th.column1, td.column1 { 
+			width : 50%; 
+		}
+
+        th.column2, td.column2 {
+            width : 25%;
+        }
+
+		table { 
+			width : 100%; 
+            font-size: 0.9em;
+		}
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 5em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error { 
+			color : red;
+			font-weight : bold;
+		}	
+		tr.onmouseout_odd { 
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+			
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);		
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {	
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}	
+	</script><title>Net Status Report</title>
+</head>
+<body onload="document.getElementById('radio_mm').click()"><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD18\Templates\AD_logo.png
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Net Status Report</h1>
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2/29/2020</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">5:04:03 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc" class="file"><acronym title="R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc">R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc</acronym></a></td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Units:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">
+<form><input type="radio" name="radio_units" id="radio_mm" onclick="changeUnits(this, 'mm')">mm<input type="radio" name="radio_units" id="radio_mil" onclick="changeUnits(this, 'mil')">mils</form>
+</td>
+</tr>
+</table><a name="IDNUVCPLTGRZ2SDRCNJ2O3XUPNDP2AR4LO0LBTNJG4EDPLSJWMUI1G"><table>
+<tr>
+<th class="column1">Nets</th>
+<th class="column2">Layer</th>
+<th class="column3">Length</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=52.083mil|Location2.X=3519.943mil|Location1.Y=1776.48mil|Location2.Y=3097.524mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=52.083mil|Location2.X=3519.943mil|Location1.Y=1776.48mil|Location2.Y=3097.524mil|Absolute=True">12V</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="60677727">154.1214mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-0.063mil|Location2.X=2950.874mil|Location1.Y=33.465mil|Location2.Y=3588.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-0.063mil|Location2.X=2950.874mil|Location1.Y=33.465mil|Location2.Y=3588.646mil|Absolute=True">12V Raw</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="64238061">163.1647mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=401.512mil|Location2.X=2779.59mil|Location1.Y=50.479mil|Location2.Y=2205.874mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=401.512mil|Location2.X=2779.59mil|Location1.Y=50.479mil|Location2.Y=2205.874mil|Absolute=True">3V3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="97611559">247.9334mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">3V3_Step_Ref</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2454985">6.2357mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=470.41mil|Location2.X=4381.493mil|Location1.Y=564.898mil|Location2.Y=2953.803mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=470.41mil|Location2.X=4381.493mil|Location1.Y=564.898mil|Location2.Y=2953.803mil|Absolute=True">5V</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="137251089">348.6178mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=721.551mil|Location2.X=2198.882mil|Location1.Y=464.567mil|Location2.Y=1330.453mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=721.551mil|Location2.X=2198.882mil|Location1.Y=464.567mil|Location2.Y=1330.453mil|Absolute=True">A3V3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="24222004">61.5239mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7.874mil|Location2.X=4581.418mil|Location1.Y=3.543mil|Location2.Y=3976.378mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7.874mil|Location2.X=4581.418mil|Location1.Y=3.543mil|Location2.Y=3976.378mil|Absolute=True">A5V</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="208771771">530.2803mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=651.512mil|Location2.X=4652.284mil|Location1.Y=70.802mil|Location2.Y=1672.113mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=651.512mil|Location2.X=4652.284mil|Location1.Y=70.802mil|Location2.Y=1672.113mil|Absolute=True">AGND</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="67644452">171.8169mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23.559mil|Location2.X=4503.606mil|Location1.Y=51.118mil|Location2.Y=3588.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23.559mil|Location2.X=4503.606mil|Location1.Y=51.118mil|Location2.Y=3588.646mil|Absolute=True">GND</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="99135530">251.8042mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2070.209mil|Location2.X=4416.202mil|Location1.Y=2697.772mil|Location2.Y=3588.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2070.209mil|Location2.X=4416.202mil|Location1.Y=2697.772mil|Location2.Y=3588.646mil|Absolute=True">INJ_GND</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="31130440">79.0713mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1683.008mil|Location2.X=4653.606mil|Location1.Y=1247.054mil|Location2.Y=2171.945mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1683.008mil|Location2.X=4653.606mil|Location1.Y=1247.054mil|Location2.Y=2171.945mil|Absolute=True">NetBT1_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="39740227">100.9402mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC1_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="14178847">36.0143mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1727.32mil|Location2.X=1893.764mil|Location1.Y=1231.236mil|Location2.Y=1390.967mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1727.32mil|Location2.X=1893.764mil|Location1.Y=1231.236mil|Location2.Y=1390.967mil|Absolute=True">NetC21_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2199375">5.5864mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1587.535mil|Location2.X=1893.764mil|Location1.Y=1211.551mil|Location2.Y=1390.967mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1587.535mil|Location2.X=1893.764mil|Location1.Y=1211.551mil|Location2.Y=1390.967mil|Absolute=True">NetC22_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3556074">9.0324mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1536.484mil|Location2.X=1893.764mil|Location1.Y=1135.038mil|Location2.Y=1209.809mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1536.484mil|Location2.X=1893.764mil|Location1.Y=1135.038mil|Location2.Y=1209.809mil|Absolute=True">NetC23_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3781807">9.6058mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1536.484mil|Location2.X=1893.764mil|Location1.Y=1060.077mil|Location2.Y=1152.622mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1536.484mil|Location2.X=1893.764mil|Location1.Y=1060.077mil|Location2.Y=1152.622mil|Absolute=True">NetC24_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3803840">9.6618mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC25_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3208982">8.1508mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC26_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3206476">8.1444mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC27_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3183093">8.0851mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC28_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3206508">8.1445mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC29_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3209108">8.1511mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC30_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3186823">8.0945mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC31_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3220943">8.1812mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC32_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3186779">8.0944mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1030.446mil|Location2.X=1306.753mil|Location1.Y=2688.46mil|Location2.Y=2978.94mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1030.446mil|Location2.X=1306.753mil|Location1.Y=2688.46mil|Location2.Y=2978.94mil|Absolute=True">NetC35_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="5009676">12.7246mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1599.74mil|Location2.X=1877.032mil|Location1.Y=2687.397mil|Location2.Y=2978.861mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1599.74mil|Location2.X=1877.032mil|Location1.Y=2687.397mil|Location2.Y=2978.861mil|Absolute=True">NetC37_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="5051871">12.8318mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC39_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="5213075">13.2412mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC3_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2458500">6.2446mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC41_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="5013891">12.7353mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.733mil|Location2.X=4587.22mil|Location1.Y=1681.63mil|Location2.Y=3170.438mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.733mil|Location2.X=4587.22mil|Location1.Y=1681.63mil|Location2.Y=3170.438mil|Absolute=True">NetC43_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="46486695">118.0762mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1138.303mil|Location2.X=4659.512mil|Location1.Y=1651.515mil|Location2.Y=3170.438mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1138.303mil|Location2.X=4659.512mil|Location1.Y=1651.515mil|Location2.Y=3170.438mil|Absolute=True">NetC43_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="47724579">121.2204mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.733mil|Location2.X=1441.772mil|Location1.Y=1407.643mil|Location2.Y=3217.462mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.733mil|Location2.X=1441.772mil|Location1.Y=1407.643mil|Location2.Y=3217.462mil|Absolute=True">NetC44_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="20237677">51.4037mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1138.297mil|Location2.X=1409.606mil|Location1.Y=1407.633mil|Location2.Y=3217.462mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1138.297mil|Location2.X=1409.606mil|Location1.Y=1407.633mil|Location2.Y=3217.462mil|Absolute=True">NetC44_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="20702265">52.5838mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC45_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3196665">8.1195mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC46_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1484993">3.7719mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC46_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2206892">5.6055mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC47_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1920400">4.8778mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC49_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3196666">8.1195mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC4_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="921529">2.3407mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC53_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3226193">8.1945mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC57_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3226149">8.1944mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetC7_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD10_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2260982">5.7429mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1753.244mil|Location2.X=2607.674mil|Location1.Y=2632.972mil|Location2.Y=3411.48mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1753.244mil|Location2.X=2607.674mil|Location1.Y=2632.972mil|Location2.Y=3411.48mil|Absolute=True">NetD10_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="13512319">34.3213mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD11_C</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="732284">1.86mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3871.587mil|Location2.X=4015.414mil|Location1.Y=2477.299mil|Location2.Y=2628.016mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3871.587mil|Location2.X=4015.414mil|Location1.Y=2477.299mil|Location2.Y=2628.016mil|Absolute=True">NetD12_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1710162">4.3438mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3879.524mil|Location2.X=4233.685mil|Location1.Y=2633.795mil|Location2.Y=3588.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3879.524mil|Location2.X=4233.685mil|Location1.Y=2633.795mil|Location2.Y=3588.646mil|Absolute=True">NetD12_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="10885483">27.6491mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD13_C</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="744097">1.89mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2652.691mil|Location2.X=2795.534mil|Location1.Y=2477.102mil|Location2.Y=2627.818mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2652.691mil|Location2.X=2795.534mil|Location1.Y=2477.102mil|Location2.Y=2627.818mil|Absolute=True">NetD14_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1694551">4.3042mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1989.465mil|Location2.X=2889.038mil|Location1.Y=2633.597mil|Location2.Y=3448.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1989.465mil|Location2.X=2889.038mil|Location1.Y=2633.597mil|Location2.Y=3448.913mil|Absolute=True">NetD14_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="15816199">40.1731mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD15_C</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="744093">1.89mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD16_C</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="744094">1.89mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD17_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2266237">5.7562mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1871.354mil|Location2.X=3213.778mil|Location1.Y=2633.597mil|Location2.Y=3486.41mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1871.354mil|Location2.X=3213.778mil|Location1.Y=2633.597mil|Location2.Y=3486.41mil|Absolute=True">NetD17_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="20249135">51.4328mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD18_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2238399">5.6855mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4160.724mil|Location2.X=4431.69mil|Location1.Y=2632.811mil|Location2.Y=3411.48mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4160.724mil|Location2.X=4431.69mil|Location1.Y=2632.811mil|Location2.Y=3411.48mil|Absolute=True">NetD18_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8454695">21.4749mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD1_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="0">0mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD27_A</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="938169">2.3829mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD28_A</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="987522">2.5083mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD29_A</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="952090">2.4183mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD30_A</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="991600">2.5187mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD31_A</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="997350">2.5333mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD32_A</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="997362">2.5333mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD33_A</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="997366">2.5333mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD34_A</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="995139">2.5277mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1978.283mil|Location2.X=2481.778mil|Location1.Y=1410.471mil|Location2.Y=2141.622mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1978.283mil|Location2.X=2481.778mil|Location1.Y=1410.471mil|Location2.Y=2141.622mil|Absolute=True">NetD38_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="9833687">24.9776mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2046.587mil|Location2.X=2097.894mil|Location1.Y=2337.778mil|Location2.Y=2456.605mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2046.587mil|Location2.X=2097.894mil|Location1.Y=2337.778mil|Location2.Y=2456.605mil|Absolute=True">NetD3_C</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="744096">1.89mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1958.598mil|Location2.X=2323.119mil|Location1.Y=1410.471mil|Location2.Y=2141.622mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1958.598mil|Location2.X=2323.119mil|Location1.Y=1410.471mil|Location2.Y=2141.622mil|Absolute=True">NetD40_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8954475">22.7444mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2046.587mil|Location2.X=2189.43mil|Location1.Y=2476.164mil|Location2.Y=2627.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2046.587mil|Location2.X=2189.43mil|Location1.Y=2476.164mil|Location2.Y=2627.189mil|Absolute=True">NetD4_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1697635">4.312mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=570.173mil|Location2.X=2282.934mil|Location1.Y=2632.969mil|Location2.Y=3452.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=570.173mil|Location2.X=2282.934mil|Location1.Y=2632.969mil|Location2.Y=3452.85mil|Absolute=True">NetD4_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="22884619">58.1269mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD5_C</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="742127">1.885mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3264.304mil|Location2.X=3405.178mil|Location1.Y=2477.299mil|Location2.Y=2626.047mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3264.304mil|Location2.X=3405.178mil|Location1.Y=2477.299mil|Location2.Y=2626.047mil|Absolute=True">NetD6_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1660949">4.2188mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3269.288mil|Location2.X=4095.89mil|Location1.Y=2631.827mil|Location2.Y=3588.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3269.288mil|Location2.X=4095.89mil|Location1.Y=2631.827mil|Location2.Y=3588.646mil|Absolute=True">NetD6_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="14649098">37.2087mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD7_C</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="742129">1.885mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD8_C</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="737806">1.874mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetD9_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2232633">5.6709mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3593.044mil|Location2.X=4095.89mil|Location1.Y=2631.827mil|Location2.Y=3411.48mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3593.044mil|Location2.X=4095.89mil|Location1.Y=2631.827mil|Location2.Y=3411.48mil|Absolute=True">NetD9_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="11187184">28.4154mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetFB1_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="624830">1.5871mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetFB2_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="623621">1.584mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3099.541mil|Location2.X=4475.168mil|Location1.Y=1883.795mil|Location2.Y=3411.48mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3099.541mil|Location2.X=4475.168mil|Location1.Y=1883.795mil|Location2.Y=3411.48mil|Absolute=True">NetJ3_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="29093875">73.8984mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1518.992mil|Location2.X=2418.785mil|Location1.Y=2094.252mil|Location2.Y=3588.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1518.992mil|Location2.X=2418.785mil|Location1.Y=2094.252mil|Location2.Y=3588.646mil|Absolute=True">NetJ3_12</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="20218606">51.3553mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3498.615mil|Location2.X=4474.409mil|Location1.Y=1084.579mil|Location2.Y=3434.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3498.615mil|Location2.X=4474.409mil|Location1.Y=1084.579mil|Location2.Y=3434.85mil|Absolute=True">NetJ3_18</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="37982810">96.4763mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3664.661mil|Location2.X=4494.804mil|Location1.Y=1080.645mil|Location2.Y=3452.661mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3664.661mil|Location2.X=4494.804mil|Location1.Y=1080.645mil|Location2.Y=3452.661mil|Absolute=True">NetJ3_19</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="32413347">82.3299mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3332.52mil|Location2.X=4514.37mil|Location1.Y=72.771mil|Location2.Y=3470.472mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3332.52mil|Location2.X=4514.37mil|Location1.Y=72.771mil|Location2.Y=3470.472mil|Absolute=True">NetJ3_20</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="55921627">142.0409mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3192.22mil|Location2.X=4533.465mil|Location1.Y=72.768mil|Location2.Y=3488.283mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3192.22mil|Location2.X=4533.465mil|Location1.Y=72.768mil|Location2.Y=3488.283mil|Absolute=True">NetJ3_23</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="54552758">138.564mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3074.11mil|Location2.X=4554.331mil|Location1.Y=72.771mil|Location2.Y=3506.094mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3074.11mil|Location2.X=4554.331mil|Location1.Y=72.771mil|Location2.Y=3506.094mil|Absolute=True">NetJ3_24</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="55341525">140.5675mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3900.882mil|Location2.X=4572.586mil|Location1.Y=3189.997mil|Location2.Y=3726.732mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3900.882mil|Location2.X=4572.586mil|Location1.Y=3189.997mil|Location2.Y=3726.732mil|Absolute=True">NetJ3_25</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="10933873">27.772mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3782.772mil|Location2.X=4659.512mil|Location1.Y=3189.997mil|Location2.Y=3824.803mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3782.772mil|Location2.X=4659.512mil|Location1.Y=3189.997mil|Location2.Y=3824.803mil|Absolute=True">NetJ3_26</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="14106789">35.8312mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3664.661mil|Location2.X=4574.409mil|Location1.Y=1084.582mil|Location2.Y=3604.331mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3664.661mil|Location2.X=4574.409mil|Location1.Y=1084.582mil|Location2.Y=3604.331mil|Absolute=True">NetJ3_27</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="39379844">100.0248mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3546.551mil|Location2.X=4592.52mil|Location1.Y=1080.642mil|Location2.Y=3622.142mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3546.551mil|Location2.X=4592.52mil|Location1.Y=1080.642mil|Location2.Y=3622.142mil|Absolute=True">NetJ3_28</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="38702811">98.3051mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3086.614mil|Location2.X=3383.291mil|Location1.Y=1802.102mil|Location2.Y=3588.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3086.614mil|Location2.X=3383.291mil|Location1.Y=1802.102mil|Location2.Y=3588.646mil|Absolute=True">NetJ3_30</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="19619201">49.8328mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3074.11mil|Location2.X=3274.272mil|Location1.Y=1854.136mil|Location2.Y=3588.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3074.11mil|Location2.X=3274.272mil|Location1.Y=1854.136mil|Location2.Y=3588.646mil|Absolute=True">NetJ3_32</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="19157402">48.6598mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=662.945mil|Location2.X=2652.976mil|Location1.Y=829.762mil|Location2.Y=3620.268mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=662.945mil|Location2.X=2652.976mil|Location1.Y=829.762mil|Location2.Y=3620.268mil|Absolute=True">NetJ3_33</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="54459683">138.3276mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=615.094mil|Location2.X=2534.866mil|Location1.Y=829.762mil|Location2.Y=3602.457mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=615.094mil|Location2.X=2534.866mil|Location1.Y=829.762mil|Location2.Y=3602.457mil|Absolute=True">NetJ3_34</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="53962173">137.0639mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2343.795mil|Location2.X=4612.205mil|Location1.Y=1080.642mil|Location2.Y=3639.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2343.795mil|Location2.X=4612.205mil|Location1.Y=1080.642mil|Location2.Y=3639.953mil|Absolute=True">NetJ3_35</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="64868972">164.7672mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2225.685mil|Location2.X=4632.536mil|Location1.Y=1080.645mil|Location2.Y=3657.764mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2225.685mil|Location2.X=4632.536mil|Location1.Y=1080.645mil|Location2.Y=3657.764mil|Absolute=True">NetJ3_36</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="63518438">161.3368mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2107.575mil|Location2.X=4652.606mil|Location1.Y=70.806mil|Location2.Y=3675.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2107.575mil|Location2.X=4652.606mil|Location1.Y=70.806mil|Location2.Y=3675.575mil|Absolute=True">NetJ3_37</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="76032271">193.122mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3099.541mil|Location2.X=4504.79mil|Location1.Y=1934.976mil|Location2.Y=3588.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3099.541mil|Location2.X=4504.79mil|Location1.Y=1934.976mil|Location2.Y=3588.646mil|Absolute=True">NetJ3_4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="29754898">75.5774mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1324.74mil|Location2.X=2652.976mil|Location1.Y=3237.021mil|Location2.Y=3919.291mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1324.74mil|Location2.X=2652.976mil|Location1.Y=3237.021mil|Location2.Y=3919.291mil|Absolute=True">NetJ3_41</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="19828627">50.3647mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1236.745mil|Location2.X=2534.866mil|Location1.Y=3237.021mil|Location2.Y=3734.252mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1236.745mil|Location2.X=2534.866mil|Location1.Y=3237.021mil|Location2.Y=3734.252mil|Absolute=True">NetJ3_42</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="18074516">45.9093mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1599.938mil|Location2.X=2416.756mil|Location1.Y=2388.968mil|Location2.Y=3588.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1599.938mil|Location2.X=2416.756mil|Location1.Y=2388.968mil|Location2.Y=3588.646mil|Absolute=True">NetJ3_43</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="17417524">44.2405mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1514.308mil|Location2.X=2298.646mil|Location1.Y=2388.965mil|Location2.Y=3588.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1514.308mil|Location2.X=2298.646mil|Location1.Y=2388.965mil|Location2.Y=3588.646mil|Absolute=True">NetJ3_44</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16313838">41.4371mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1025.134mil|Location2.X=2180.535mil|Location1.Y=2388.342mil|Location2.Y=3588.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1025.134mil|Location2.X=2180.535mil|Location1.Y=2388.342mil|Location2.Y=3588.646mil|Absolute=True">NetJ3_45</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="20429336">51.8905mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=940.489mil|Location2.X=2062.425mil|Location1.Y=2388.342mil|Location2.Y=3588.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=940.489mil|Location2.X=2062.425mil|Location1.Y=2388.342mil|Location2.Y=3588.646mil|Absolute=True">NetJ3_46</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="20162952">51.2139mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1596.394mil|Location2.X=1944.315mil|Location1.Y=3096.846mil|Location2.Y=3588.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1596.394mil|Location2.X=1944.315mil|Location1.Y=3096.846mil|Location2.Y=3588.646mil|Absolute=True">NetJ3_47</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="5521217">14.0239mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1511.748mil|Location2.X=1826.205mil|Location1.Y=3096.846mil|Location2.Y=3588.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1511.748mil|Location2.X=1826.205mil|Location1.Y=3096.846mil|Location2.Y=3588.646mil|Absolute=True">NetJ3_48</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="5460855">13.8706mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=688.284mil|Location2.X=1017.383mil|Location1.Y=3096.924mil|Location2.Y=3411.48mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=688.284mil|Location2.X=1017.383mil|Location1.Y=3096.924mil|Location2.Y=3411.48mil|Absolute=True">NetJ3_55</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4382251">11.1309mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1042.614mil|Location2.X=2260.127mil|Location1.Y=2094.252mil|Location2.Y=3588.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1042.614mil|Location2.X=2260.127mil|Location1.Y=2094.252mil|Location2.Y=3588.646mil|Absolute=True">NetJ3_60</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="23454468">59.5743mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=688.284mil|Location2.X=1102.029mil|Location1.Y=3096.924mil|Location2.Y=3588.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=688.284mil|Location2.X=1102.029mil|Location1.Y=3096.924mil|Location2.Y=3588.646mil|Absolute=True">NetJ3_63</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="6746618">17.1364mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1908.284mil|Location2.X=2653.603mil|Location1.Y=63.889mil|Location2.Y=871.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1908.284mil|Location2.X=2653.603mil|Location1.Y=63.889mil|Location2.Y=871.126mil|Absolute=True">NetJ?_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="15877099">40.3278mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1961.716mil|Location2.X=2716.598mil|Location1.Y=47.055mil|Location2.Y=871.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1961.716mil|Location2.X=2716.598mil|Location1.Y=47.055mil|Location2.Y=871.126mil|Absolute=True">NetJ?_3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="18475962">46.9289mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1926.094mil|Location2.X=2470.831mil|Location1.Y=36.668mil|Location2.Y=871.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1926.094mil|Location2.X=2470.831mil|Location1.Y=36.668mil|Location2.Y=871.126mil|Absolute=True">NetJ?_5</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="15828921">40.2055mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1943.906mil|Location2.X=2815.024mil|Location1.Y=28.15mil|Location2.Y=871.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1943.906mil|Location2.X=2815.024mil|Location1.Y=28.15mil|Location2.Y=871.126mil|Absolute=True">NetJ?_7</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="24023509">61.0197mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1977.718mil|Location2.X=2031.559mil|Location1.Y=182.614mil|Location2.Y=871.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1977.718mil|Location2.X=2031.559mil|Location1.Y=182.614mil|Location2.Y=871.126mil|Absolute=True">NetJ?_SW</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="6414052">16.2917mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2391.669mil|Location2.X=2498.843mil|Location1.Y=1414.307mil|Location2.Y=1659.906mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2391.669mil|Location2.X=2498.843mil|Location1.Y=1414.307mil|Location2.Y=1659.906mil|Absolute=True">NetP1_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2060556">5.2338mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2371.984mil|Location2.X=2448.843mil|Location1.Y=1414.307mil|Location2.Y=1659.906mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2371.984mil|Location2.X=2448.843mil|Location1.Y=1414.307mil|Location2.Y=1659.906mil|Absolute=True">NetP1_4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1780122">4.5215mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2116.079mil|Location2.X=2398.843mil|Location1.Y=1414.307mil|Location2.Y=1659.906mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2116.079mil|Location2.X=2398.843mil|Location1.Y=1414.307mil|Location2.Y=1659.906mil|Absolute=True">NetP1_6</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3806882">9.6695mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1892.945mil|Location2.X=2037.465mil|Location1.Y=1410.471mil|Location2.Y=1806.622mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1892.945mil|Location2.X=2037.465mil|Location1.Y=1410.471mil|Location2.Y=1806.622mil|Absolute=True">NetP3_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3793355">9.6351mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetQ1_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2721378">6.9123mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetQ2_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2751041">6.9876mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetQ3_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1965422">4.9922mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetQ4_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1949796">4.9525mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetQ5_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2731221">6.9373mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetQ6_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2706468">6.8744mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetQ7_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1996828">5.0719mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetQ8_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1955578">4.9672mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR104_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1428301">3.6279mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR105_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1414385">3.5925mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=828.264mil|Location2.X=1893.764mil|Location1.Y=1306.14mil|Location2.Y=2090.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=828.264mil|Location2.X=1893.764mil|Location1.Y=1306.14mil|Location2.Y=2090.259mil|Absolute=True">NetR106_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="17109753">43.4588mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1400.705mil|Location2.X=1893.764mil|Location1.Y=1345.51mil|Location2.Y=2091.87mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1400.705mil|Location2.X=1893.764mil|Location1.Y=1345.51mil|Location2.Y=2091.87mil|Absolute=True">NetR107_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="11191627">28.4267mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR110_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1491930">3.7895mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR111_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1476167">3.7495mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=827.673mil|Location2.X=1893.764mil|Location1.Y=1325.825mil|Location2.Y=2205.059mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=827.673mil|Location2.X=1893.764mil|Location1.Y=1325.825mil|Location2.Y=2205.059mil|Absolute=True">NetR114_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="15951113">40.5158mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1400.508mil|Location2.X=1893.764mil|Location1.Y=1365.195mil|Location2.Y=2214.819mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1400.508mil|Location2.X=1893.764mil|Location1.Y=1365.195mil|Location2.Y=2214.819mil|Absolute=True">NetR115_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="10217172">25.9516mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=956.236mil|Location2.X=1893.764mil|Location1.Y=971.517mil|Location2.Y=1802.951mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=956.236mil|Location2.X=1893.764mil|Location1.Y=971.517mil|Location2.Y=1802.951mil|Absolute=True">NetR119_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="15737079">39.9722mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1730.255mil|Location2.X=2502.031mil|Location1.Y=342.597mil|Location2.Y=1290.417mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1730.255mil|Location2.X=2502.031mil|Location1.Y=342.597mil|Location2.Y=1290.417mil|Absolute=True">NetR11_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="14621269">37.138mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR121_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1702758">4.325mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=869.622mil|Location2.X=2063.055mil|Location1.Y=802.203mil|Location2.Y=1626.736mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=869.622mil|Location2.X=2063.055mil|Location1.Y=802.203mil|Location2.Y=1626.736mil|Absolute=True">NetR122_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="18377145">46.6779mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR125_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1277528">3.2449mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2436.945mil|Location2.X=2793.397mil|Location1.Y=240.094mil|Location2.Y=916.402mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2436.945mil|Location2.X=2793.397mil|Location1.Y=240.094mil|Location2.Y=916.402mil|Absolute=True">NetR125_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="10310507">26.1887mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR127_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="2319165">5.8907mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR130_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1409450">3.58mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR131_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="9327988">23.6931mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR136_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1273624">3.235mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2436.945mil|Location2.X=3289.434mil|Location1.Y=240.094mil|Location2.Y=1270.732mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2436.945mil|Location2.X=3289.434mil|Location1.Y=240.094mil|Location2.Y=1270.732mil|Absolute=True">NetR136_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="20087143">51.0213mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR141_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1283494">3.2601mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2436.945mil|Location2.X=3293.307mil|Location1.Y=837.535mil|Location2.Y=1321.951mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2436.945mil|Location2.X=3293.307mil|Location1.Y=837.535mil|Location2.Y=1321.951mil|Absolute=True">NetR141_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="17815306">45.2509mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR148_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1283495">3.2601mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2175.134mil|Location2.X=2793.394mil|Location1.Y=674.219mil|Location2.Y=1130.338mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2175.134mil|Location2.X=2793.394mil|Location1.Y=674.219mil|Location2.Y=1130.338mil|Absolute=True">NetR148_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="11892235">30.2063mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR16_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="822874">2.0901mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR17_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="872088">2.2151mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2436.945mil|Location2.X=3582.488mil|Location1.Y=1211.159mil|Location2.Y=2529.918mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2436.945mil|Location2.X=3582.488mil|Location1.Y=1211.159mil|Location2.Y=2529.918mil|Absolute=True">NetR20_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="26312426">66.8336mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2132.198mil|Location2.X=2567.178mil|Location1.Y=1172.181mil|Location2.Y=2530.444mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2132.198mil|Location2.X=2567.178mil|Location1.Y=1172.181mil|Location2.Y=2530.444mil|Absolute=True">NetR21_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="21140490">53.6968mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2436.945mil|Location2.X=3744.765mil|Location1.Y=1177.102mil|Location2.Y=2530.594mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2436.945mil|Location2.X=3744.765mil|Location1.Y=1177.102mil|Location2.Y=2530.594mil|Absolute=True">NetR24_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="25418868">64.5639mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2302.48mil|Location2.X=2594.894mil|Location1.Y=1191.866mil|Location2.Y=2530.752mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2302.48mil|Location2.X=2594.894mil|Location1.Y=1191.866mil|Location2.Y=2530.752mil|Absolute=True">NetR25_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="17242503">43.796mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR26_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="882238">2.2409mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR27_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="892114">2.266mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR2_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1643898">4.1755mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR32_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="720371">1.8297mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR33_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="895400">2.2743mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2436.945mil|Location2.X=2927.03mil|Location1.Y=1090.486mil|Location2.Y=2531.381mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2436.945mil|Location2.X=2927.03mil|Location1.Y=1090.486mil|Location2.Y=2531.381mil|Absolute=True">NetR36_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="21101781">53.5985mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2436.945mil|Location2.X=4145.926mil|Location1.Y=1050.487mil|Location2.Y=2530.903mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2436.945mil|Location2.X=4145.926mil|Location1.Y=1050.487mil|Location2.Y=2530.903mil|Absolute=True">NetR37_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="28737777">72.994mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2436.945mil|Location2.X=3134.136mil|Location1.Y=1066.866mil|Location2.Y=2530.397mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2436.945mil|Location2.X=3134.136mil|Location1.Y=1066.866mil|Location2.Y=2530.397mil|Absolute=True">NetR40_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="22736112">57.7497mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2436.945mil|Location2.X=4353.032mil|Location1.Y=1032.676mil|Location2.Y=2530.912mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2436.945mil|Location2.X=4353.032mil|Location1.Y=1032.676mil|Location2.Y=2530.912mil|Absolute=True">NetR41_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="31196497">79.2391mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR42_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="874533">2.2213mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR43_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="884921">2.2477mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR50_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1266928">3.218mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2017.653mil|Location2.X=3463.308mil|Location1.Y=244.031mil|Location2.Y=871.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2017.653mil|Location2.X=3463.308mil|Location1.Y=244.031mil|Location2.Y=871.126mil|Absolute=True">NetR50_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="20729495">52.6529mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR51_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1278313">3.2469mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2057.024mil|Location2.X=4124.725mil|Location1.Y=244.031mil|Location2.Y=871.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2057.024mil|Location2.X=4124.725mil|Location1.Y=244.031mil|Location2.Y=871.126mil|Absolute=True">NetR51_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="28119539">71.4236mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1272.709mil|Location2.X=4494.804mil|Location1.Y=9.747mil|Location2.Y=593.527mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1272.709mil|Location2.X=4494.804mil|Location1.Y=9.747mil|Location2.Y=593.527mil|Absolute=True">NetR57_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="37949586">96.3919mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR60_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1261418">3.204mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1795.213mil|Location2.X=3960.692mil|Location1.Y=244.031mil|Location2.Y=916.402mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1795.213mil|Location2.X=3960.692mil|Location1.Y=244.031mil|Location2.Y=916.402mil|Absolute=True">NetR60_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="30472311">77.3997mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR61_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1278345">3.247mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1828.677mil|Location2.X=4595.229mil|Location1.Y=244.024mil|Location2.Y=1016.896mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1828.677mil|Location2.X=4595.229mil|Location1.Y=244.024mil|Location2.Y=1016.896mil|Absolute=True">NetR61_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="35901638">91.1902mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR70_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1246851">3.167mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2291.56mil|Location2.X=3958.661mil|Location1.Y=806.039mil|Location2.Y=1415.449mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2291.56mil|Location2.X=3958.661mil|Location1.Y=806.039mil|Location2.Y=1415.449mil|Absolute=True">NetR70_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="28475039">72.3266mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR71_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1278312">3.2469mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1828.677mil|Location2.X=4628.599mil|Location1.Y=841.984mil|Location2.Y=1488.252mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1828.677mil|Location2.X=4628.599mil|Location1.Y=841.984mil|Location2.Y=1488.252mil|Absolute=True">NetR71_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="38214039">97.0637mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR80_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1261026">3.203mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2307.024mil|Location2.X=3463.308mil|Location1.Y=806.039mil|Location2.Y=1395.764mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2307.024mil|Location2.X=3463.308mil|Location1.Y=806.039mil|Location2.Y=1395.764mil|Absolute=True">NetR80_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="22093363">56.1171mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR81_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1273557">3.2348mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2194.819mil|Location2.X=4124.731mil|Location1.Y=806.039mil|Location2.Y=1433.26mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2194.819mil|Location2.X=4124.731mil|Location1.Y=806.039mil|Location2.Y=1433.26mil|Absolute=True">NetR81_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="30171654">76.636mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR88_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1416102">3.5969mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR89_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1416102">3.5969mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=826.293mil|Location2.X=2057.149mil|Location1.Y=1410.471mil|Location2.Y=2798.842mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=826.293mil|Location2.X=2057.149mil|Location1.Y=1410.471mil|Location2.Y=2798.842mil|Absolute=True">NetR90_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="26102480">66.3003mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1396.571mil|Location2.X=2096.52mil|Location1.Y=1414.307mil|Location2.Y=2798.763mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1396.571mil|Location2.X=2096.52mil|Location1.Y=1414.307mil|Location2.Y=2798.763mil|Absolute=True">NetR91_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="20741629">52.6837mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=0mil|Location1.Y=0mil|Location2.Y=0mil|Absolute=True">NetR94_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1720408">4.3698mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1596.394mil|Location2.X=1744.157mil|Location1.Y=2911.807mil|Location2.Y=3056.617mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1596.394mil|Location2.X=1744.157mil|Location1.Y=2911.807mil|Location2.Y=3056.617mil|Absolute=True">NetR95_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1479700">3.7584mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=825.705mil|Location2.X=2076.835mil|Location1.Y=1410.471mil|Location2.Y=2908.999mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=825.705mil|Location2.X=2076.835mil|Location1.Y=1410.471mil|Location2.Y=2908.999mil|Absolute=True">NetR98_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="24300811">61.7241mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1392.634mil|Location2.X=2116.205mil|Location1.Y=1410.471mil|Location2.Y=2909.984mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1392.634mil|Location2.X=2116.205mil|Location1.Y=1410.471mil|Location2.Y=2909.984mil|Absolute=True">NetR99_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="19228335">48.84mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1828.677mil|Location2.X=2930.376mil|Location1.Y=1054.071mil|Location2.Y=1905.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1828.677mil|Location2.X=2930.376mil|Location1.Y=1054.071mil|Location2.Y=1905.575mil|Absolute=True">NetU1_17</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="16338468">41.4997mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1828.677mil|Location2.X=2930.376mil|Location1.Y=1034.386mil|Location2.Y=1931.165mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1828.677mil|Location2.X=2930.376mil|Location1.Y=1034.386mil|Location2.Y=1931.165mil|Absolute=True">NetU1_18</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="15736994">39.972mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1828.677mil|Location2.X=2930.376mil|Location1.Y=1014.701mil|Location2.Y=1879.984mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1828.677mil|Location2.X=2930.376mil|Location1.Y=1014.701mil|Location2.Y=1879.984mil|Absolute=True">NetU1_19</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="15270730">38.7877mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1578.874mil|Location2.X=2293.37mil|Location1.Y=644.723mil|Location2.Y=1479.394mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1578.874mil|Location2.X=2293.37mil|Location1.Y=644.723mil|Location2.Y=1479.394mil|Absolute=True">NetU1_82</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="13065964">33.1875mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1428.874mil|Location2.X=2273.685mil|Location1.Y=644.723mil|Location2.Y=1479.394mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1428.874mil|Location2.X=2273.685mil|Location1.Y=644.723mil|Location2.Y=1479.394mil|Absolute=True">NetU1_83</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="14056149">35.7026mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1568.045mil|Location2.X=1621.32mil|Location1.Y=182.025mil|Location2.Y=386.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1568.045mil|Location2.X=1621.32mil|Location1.Y=182.025mil|Location2.Y=386.033mil|Absolute=True">USB_1_N</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1579857">4.0128mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1623.163mil|Location2.X=1674.47mil|Location1.Y=182.025mil|Location2.Y=386.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1623.163mil|Location2.X=1674.47mil|Location1.Y=182.025mil|Location2.Y=386.033mil|Absolute=True">USB_1_P</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="1571704">3.9921mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1635.502mil|Location2.X=2502.031mil|Location1.Y=421.34mil|Location2.Y=1329.787mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1635.502mil|Location2.X=2502.031mil|Location1.Y=421.34mil|Location2.Y=1329.787mil|Absolute=True">USB_2_N</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="14797736">37.5862mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1568.045mil|Location2.X=2502.031mil|Location1.Y=421.34mil|Location2.Y=1349.472mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1568.045mil|Location2.X=2502.031mil|Location1.Y=421.34mil|Location2.Y=1349.472mil|Absolute=True">USB_2_P</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="15392147">39.0961mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1612.142mil|Location2.X=1927.511mil|Location1.Y=1260.865mil|Location2.Y=1610.693mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1612.142mil|Location2.X=1927.511mil|Location1.Y=1260.865mil|Location2.Y=1610.693mil|Absolute=True">VBAT</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="6130316">15.571mm
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1519.622mil|Location2.X=1781.562mil|Location1.Y=182.025mil|Location2.Y=464.77mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1519.622mil|Location2.X=1781.562mil|Location1.Y=182.025mil|Location2.Y=464.77mil|Absolute=True">VBUS</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="5940677">15.0893mm
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1567.913mil|Location2.X=2344.944mil|Location1.Y=695.949mil|Location2.Y=1659.906mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=R:\SeniorProjects\SP2020\DavidTo\Hardware Portfolio\ECU\ECU.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1567.913mil|Location2.X=2344.944mil|Location1.Y=695.949mil|Location2.Y=1659.906mil|Absolute=True">nRESET</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="15917708">40.431mm
+			</a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

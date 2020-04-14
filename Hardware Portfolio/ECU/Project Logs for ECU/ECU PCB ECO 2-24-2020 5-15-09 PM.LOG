@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=3V3_Step_Ref Pin=U18-16
+Removed Pin From Net: NetName=3V3_Step_Ref Pin=U18-17
+Added Pin To Net: NetName=NetC48_2 Pin=U18-16
+Added Pin To Net: NetName=NetC48_2 Pin=U18-17
+Change Net Name : Old Net Name=3V3_Step_Ref New Net Name=NetR131_1
+Change Net Name : Old Net Name=NetC48_2 New Net Name=3V3_Step_Ref

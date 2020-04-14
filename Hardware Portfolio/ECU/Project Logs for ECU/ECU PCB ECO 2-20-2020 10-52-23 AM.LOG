@@ -1,0 +1,3 @@
+Change Component Footprint: Designator=C4 Old Footprint=CAPC0603(1608)100_L New Footprint=CAPC0603(1608)100_M
+Change Component Footprint: Designator=R4 Old Footprint=RESC0603(1608)_L New Footprint=RESC0603(1608)_M
+Added Member To Class: ClassName=Power_Communications_MCU Member=Component L1 100uF

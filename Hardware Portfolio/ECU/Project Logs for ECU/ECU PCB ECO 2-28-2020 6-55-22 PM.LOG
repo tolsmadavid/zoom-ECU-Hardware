@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=INJ_GND Pin=D31-C
+Removed Pin From Net: NetName=INJ_GND Pin=D33-C
+Added Pin To Net: NetName=GND Pin=D31-C
+Added Pin To Net: NetName=GND Pin=D33-C
+Added Member To Class: ClassName=Power_Communications_MCU Member=Component P3 BOOT_0

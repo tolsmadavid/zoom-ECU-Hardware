@@ -1,0 +1,4 @@
+Added Pin To Net: NetName=NetR77_1 Pin=J3-28
+Added Pin To Net: NetName=NetR81_2 Pin=U1-40
+Change Net Name : Old Net Name=NetR77_1 New Net Name=NetJ3_28
+Added Member To Class: ClassName=Power_Communications_MCU Member=Component U1 STM32G474VET6

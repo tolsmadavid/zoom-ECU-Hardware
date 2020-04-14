@@ -1,0 +1,6 @@
+Added Pin To Net: NetName=GND Pin=J3-7
+Added Pin To Net: NetName=INJ_GND Pin=J3-8
+Added Pin To Net: NetName=GND Pin=J3-9
+Added Pin To Net: NetName=INJ_GND Pin=J3-10
+Added Pin To Net: NetName=12V Raw Pin=J3-16
+Added Pin To Net: NetName=A5V Pin=J3-21

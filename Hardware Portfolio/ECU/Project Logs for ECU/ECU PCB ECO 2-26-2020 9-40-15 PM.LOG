@@ -1,0 +1,82 @@
+Removed Pin From Net: NetName=INJ_GND Pin=C35-1
+Removed Pin From Net: NetName=INJ_GND Pin=C36-1
+Removed Pin From Net: NetName=INJ_GND Pin=C37-1
+Removed Pin From Net: NetName=INJ_GND Pin=C38-1
+Removed Pin From Net: NetName=INJ_GND Pin=C39-1
+Removed Pin From Net: NetName=INJ_GND Pin=C40-1
+Removed Pin From Net: NetName=INJ_GND Pin=C41-1
+Removed Pin From Net: NetName=INJ_GND Pin=C42-1
+Removed Pin From Net: NetName=INJ_GND Pin=D27-C
+Removed Pin From Net: NetName=INJ_GND Pin=D28-C
+Removed Pin From Net: NetName=INJ_GND Pin=D29-C
+Removed Pin From Net: NetName=INJ_GND Pin=D30-C
+Removed Pin From Net: NetName=INJ_GND Pin=D32-C
+Removed Pin From Net: NetName=INJ_GND Pin=D34-C
+Removed Pin From Net: NetName=INJ_GND Pin=R86-2
+Removed Pin From Net: NetName=INJ_GND Pin=R87-2
+Removed Pin From Net: NetName=INJ_GND Pin=R100-1
+Removed Pin From Net: NetName=INJ_GND Pin=R101-1
+Removed Pin From Net: NetName=INJ_GND Pin=R102-2
+Removed Pin From Net: NetName=INJ_GND Pin=R103-2
+Removed Pin From Net: NetName=INJ_GND Pin=R116-1
+Removed Pin From Net: NetName=INJ_GND Pin=R117-1
+Change Component Description : Designator=U2 Old Description=The A5975D is a step-down monolithic power
+switching regulator with a minimum switch current
+limit of 3.75 A, it is therefore able to deliver up to 3
+A DC current to the load depending on the
+application conditions. The output voltage can be
+set from 1.235 V to 35 V. The high current level is
+also achieved thanks to a HSOP8 package with
+exposed frame, that allows to reduce the RTHJ-A
+down to approximately 40 °C/W. The device uses
+an internal P-channel DMOS transistor (with a
+typical RDS(on) of 250 mO) as switching element
+to minimize the size of the external components.
+An internal oscillator fixes the switching frequency
+at 250 kHz. Having a minimum input voltage of
+only 4 V, it fits automotive applications requiring
+device operation even in cold crank conditions.
+Pulse-by-pulse current limit with the internal
+frequency modulation offers an effective constant
+current short-circuit protection. New Description=The A5975D is a step-down monolithic power
+switching regulator with a minimum switch current
+limit of 3.75 A, it is therefore able to deliver up to 3
+A DC current to the load depending on the
+application conditions. The output voltage can be
+set from 1.235 V to 35 V. The high current level is
+also achieved thanks to a HSOP8 package with
+exposed frame, that allows to reduce the RTHJ-A
+down to approximately 40 °C/W. The device uses
+an internal P-channel DMOS transistor (with a
+typical RDS(on) of 250 mO) as switching element
+to minimize the size of the external components.
+An internal oscillator fixes the switching frequency
+at 250 kHz. Having a minimum input voltage of
+only 4 V, it fits automotive applications requiring
+device operation even in cold crank conditions.
+Pulse-by-pulse current limit with the internal
+frequency modulation offers an effective constant
+current short-circuit protection.
+Added Pin To Net: NetName=GND Pin=C35-1
+Added Pin To Net: NetName=GND Pin=C36-1
+Added Pin To Net: NetName=GND Pin=C37-1
+Added Pin To Net: NetName=GND Pin=C38-1
+Added Pin To Net: NetName=GND Pin=C39-1
+Added Pin To Net: NetName=GND Pin=C40-1
+Added Pin To Net: NetName=GND Pin=C41-1
+Added Pin To Net: NetName=GND Pin=C42-1
+Added Pin To Net: NetName=GND Pin=D27-C
+Added Pin To Net: NetName=GND Pin=D28-C
+Added Pin To Net: NetName=GND Pin=D29-C
+Added Pin To Net: NetName=GND Pin=D30-C
+Added Pin To Net: NetName=GND Pin=D32-C
+Added Pin To Net: NetName=GND Pin=D34-C
+Added Pin To Net: NetName=GND Pin=R86-2
+Added Pin To Net: NetName=GND Pin=R87-2
+Added Pin To Net: NetName=GND Pin=R100-1
+Added Pin To Net: NetName=GND Pin=R101-1
+Added Pin To Net: NetName=GND Pin=R102-2
+Added Pin To Net: NetName=GND Pin=R103-2
+Added Pin To Net: NetName=GND Pin=R116-1
+Added Pin To Net: NetName=GND Pin=R117-1
+Added Member To Class: ClassName=Power_Communications_MCU Member=Component BT1 BAT-HLD-001

@@ -1,0 +1,45 @@
+Removed Pin From Net: NetName=NetD14_3 Pin=J3-38
+Removed Pin From Net: NetName=NetD10_3 Pin=J3-39
+Removed Pin From Net: NetName=NetD4_3 Pin=J3-40
+Removed Pin From Net: NetName=NetD17_3 Pin=J3-56
+Change Component Description : Designator=U2 Old Description=The A5975D is a step-down monolithic power
+switching regulator with a minimum switch current
+limit of 3.75 A, it is therefore able to deliver up to 3
+A DC current to the load depending on the
+application conditions. The output voltage can be
+set from 1.235 V to 35 V. The high current level is
+also achieved thanks to a HSOP8 package with
+exposed frame, that allows to reduce the RTHJ-A
+down to approximately 40 °C/W. The device uses
+an internal P-channel DMOS transistor (with a
+typical RDS(on) of 250 mO) as switching element
+to minimize the size of the external components.
+An internal oscillator fixes the switching frequency
+at 250 kHz. Having a minimum input voltage of
+only 4 V, it fits automotive applications requiring
+device operation even in cold crank conditions.
+Pulse-by-pulse current limit with the internal
+frequency modulation offers an effective constant
+current short-circuit protection. New Description=The A5975D is a step-down monolithic power
+switching regulator with a minimum switch current
+limit of 3.75 A, it is therefore able to deliver up to 3
+A DC current to the load depending on the
+application conditions. The output voltage can be
+set from 1.235 V to 35 V. The high current level is
+also achieved thanks to a HSOP8 package with
+exposed frame, that allows to reduce the RTHJ-A
+down to approximately 40 °C/W. The device uses
+an internal P-channel DMOS transistor (with a
+typical RDS(on) of 250 mO) as switching element
+to minimize the size of the external components.
+An internal oscillator fixes the switching frequency
+at 250 kHz. Having a minimum input voltage of
+only 4 V, it fits automotive applications requiring
+device operation even in cold crank conditions.
+Pulse-by-pulse current limit with the internal
+frequency modulation offers an effective constant
+current short-circuit protection.
+Added Pin To Net: NetName=NetD17_3 Pin=J3-38
+Added Pin To Net: NetName=NetD14_3 Pin=J3-39
+Added Pin To Net: NetName=NetD10_3 Pin=J3-40
+Added Pin To Net: NetName=NetD4_3 Pin=J3-56

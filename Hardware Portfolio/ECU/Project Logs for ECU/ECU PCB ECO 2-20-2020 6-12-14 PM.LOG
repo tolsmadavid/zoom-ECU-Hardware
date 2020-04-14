@@ -1,0 +1,226 @@
+Removed Member From Class: ClassName=Op_Amp_Sig_Process_Off-Board_Connector_Etc Member=TP31
+Change Component Comment : Designator=R55 Old Comment=1K 1% 0603(1608) New Comment=1K
+Change Component Comment : Designator=R64 Old Comment=1K 1% 0603(1608) New Comment=1K
+Change Component Comment : Designator=R145 Old Comment=1K 1% 0603(1608) New Comment=1K
+Change Component Comment : Designator=R148 Old Comment=1M 1% 0603(1608) New Comment=1M
+Change Component Comment : Designator=R74 Old Comment=2K49 1% 0603(1608) New Comment=2K49
+Change Component Comment : Designator=R84 Old Comment=2K49 1% 0603(1608) New Comment=2K49
+Change Component Comment : Designator=R143 Old Comment=2M 1% 0603(1608) New Comment=2M
+Change Component Comment : Designator=R146 Old Comment=2M 1% 0603(1608) New Comment=2M 
+Change Component Comment : Designator=R137 Old Comment=3K9 1% 0603(1608) New Comment=3K9
+Change Component Comment : Designator=R149 Old Comment=4K3 1% 0603(1608) New Comment=4K3
+Change Component Comment : Designator=R14 Old Comment=4R99 1% 0603(1608) New Comment=4R99
+Change Component Comment : Designator=R15 Old Comment=4R99 1% 0603(1608) New Comment=4R99
+Change Component Comment : Designator=R26 Old Comment=4R99 1% 0603(1608) New Comment=4R99
+Change Component Comment : Designator=R27 Old Comment=4R99 1% 0603(1608) New Comment=4R99
+Change Component Comment : Designator=R34 Old Comment=4R99 1% 0603(1608) New Comment=4R99
+Change Component Comment : Designator=R35 Old Comment=4R99 1% 0603(1608) New Comment=4R99
+Change Component Comment : Designator=R46 Old Comment=4R99 1% 0603(1608) New Comment=4R99
+Change Component Comment : Designator=R47 Old Comment=4R99 1% 0603(1608) New Comment=4R99
+Change Component Comment : Designator=R102 Old Comment=4R99 1% 0603(1608) New Comment=4R99
+Change Component Comment : Designator=R103 Old Comment=4R99 1% 0603(1608) New Comment=4R99
+Change Component Comment : Designator=R104 Old Comment=4R99 1% 0603(1608) New Comment=4R99 
+Change Component Comment : Designator=R105 Old Comment=4R99 1% 0603(1608) New Comment=4R99
+Change Component Comment : Designator=R122 Old Comment=4R99 1% 0603(1608) New Comment=4R99
+Change Component Comment : Designator=R123 Old Comment=4R99 1% 0603(1608) New Comment=4R99
+Change Component Comment : Designator=R124 Old Comment=4R99 1% 0603(1608) New Comment=4R99
+Change Component Comment : Designator=R125 Old Comment=4R99 1% 0603(1608) New Comment=4R99
+Change Component Comment : Designator=R18 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R19 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R32 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R33 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R38 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R39 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R52 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R53 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R56 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R57 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R58 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R59 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R60 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R61 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R66 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R67 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R68 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R69 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R70 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R71 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R76 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R77 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R78 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R79 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R80 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R81 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R86 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R87 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R88 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R89 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R90 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R91 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R134 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R135 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R136 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R138 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R139 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R140 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R141 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R142 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R144 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R151 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R152 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R153 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R156 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R157 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R158 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R160 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R162 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R163 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R164 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R165 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R167 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R168 Old Comment=10K 1% 0603(1608) New Comment=10K
+Change Component Comment : Designator=R147 Old Comment=13K 1% 0603(1608) New Comment=13K
+Change Component Comment : Designator=R20 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R21 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R28 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R29 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R40 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R41 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R48 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R49 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R94 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R95 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R98 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R99 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R110 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R111 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R112 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R113 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R114 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R115 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R118 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R119 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R130 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R131 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R132 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R133 Old Comment=100K 1% 0603(1608) New Comment=100K
+Change Component Comment : Designator=R22 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R23 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R24 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R25 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R42 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R43 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R44 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R45 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R96 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R97 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R100 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R101 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R106 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R107 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R108 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R109 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R116 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R117 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R120 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R121 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R126 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R127 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R128 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R129 Old Comment=100R 1% 0603(1608) New Comment=100R
+Change Component Comment : Designator=R16 Old Comment=220R 1% 0603(1608) New Comment=220R
+Change Component Comment : Designator=R17 Old Comment=220R 1% 0603(1608) New Comment=220R
+Change Component Comment : Designator=R30 Old Comment=220R 1% 0603(1608) New Comment=220R
+Change Component Comment : Designator=R31 Old Comment=220R 1% 0603(1608) New Comment=220R
+Change Component Comment : Designator=R36 Old Comment=220R 1% 0603(1608) New Comment=220R
+Change Component Comment : Designator=R37 Old Comment=220R 1% 0603(1608) New Comment=220R
+Change Component Comment : Designator=R50 Old Comment=220R 1% 0603(1608) New Comment=220R
+Change Component Comment : Designator=R51 Old Comment=220R 1% 0603(1608) New Comment=220R
+Change Component Comment : Designator=R62 Old Comment=510K 1% 0603(1608) New Comment=510K
+Change Component Comment : Designator=R83 Old Comment=510K 1% 0603(1608) New Comment=510K
+Change Component Comment : Designator=R93 Old Comment=510K 1% 0603(1608) New Comment=510K
+Change Component Comment : Designator=C43 Old Comment=CAP 1nF 50V 0603(1608) New Comment=1nF
+Change Component Comment : Designator=C44 Old Comment=CAP 1nF 50V 0603(1608) New Comment=1nF
+Change Component Comment : Designator=C35 Old Comment=CAP 1uF 50V 0603(1608) New Comment=1uF
+Change Component Comment : Designator=C37 Old Comment=CAP 1uF 50V 0603(1608) New Comment=1uF
+Change Component Comment : Designator=C39 Old Comment=CAP 1uF 50V 0603(1608) New Comment=1uF
+Change Component Comment : Designator=C41 Old Comment=CAP 1uF 50V 0603(1608) New Comment=1uF
+Change Component Comment : Designator=C54 Old Comment=CAP 1uF 50V 0603(1608) New Comment=1uF
+Change Component Comment : Designator=C25 Old Comment=CAP 10nF 50V 0603(1608) New Comment=10nF
+Change Component Comment : Designator=C26 Old Comment=CAP 10nF 50V 0603(1608) New Comment=10nF
+Change Component Comment : Designator=C27 Old Comment=CAP 10nF 50V 0603(1608) New Comment=10nF
+Change Component Comment : Designator=C28 Old Comment=CAP 10nF 50V 0603(1608) New Comment=10nF
+Change Component Comment : Designator=C29 Old Comment=CAP 10nF 50V 0603(1608) New Comment=10nF
+Change Component Comment : Designator=C30 Old Comment=CAP 10nF 50V 0603(1608) New Comment=10nF
+Change Component Comment : Designator=C31 Old Comment=CAP 10nF 50V 0603(1608) New Comment=10nF
+Change Component Comment : Designator=C32 Old Comment=CAP 10nF 50V 0603(1608) New Comment=10nF
+Change Component Comment : Designator=C45 Old Comment=CAP 10nF 50V 0603(1608) New Comment=10nF
+Change Component Comment : Designator=C49 Old Comment=CAP 10nF 50V 0603(1608) New Comment=10nF
+Change Component Comment : Designator=C53 Old Comment=CAP 10nF 50V 0603(1608) New Comment=10nF
+Change Component Comment : Designator=C55 Old Comment=CAP 10nF 50V 0603(1608) New Comment=10nF
+Change Component Comment : Designator=C57 Old Comment=CAP 10nF 50V 0603(1608) New Comment=10nF
+Change Component Comment : Designator=C52 Old Comment=CAP 22uF 10V 1210(3225) New Comment=22uF Tant
+Change Component Comment : Designator=C33 Old Comment=CAP 100nF 10V 0603(1608) New Comment=100nF
+Change Component Comment : Designator=C34 Old Comment=CAP 100nF 10V 0603(1608) New Comment=100nF
+Change Component Comment : Designator=C47 Old Comment=CAP 100nF 10V 0603(1608) New Comment=100nF
+Change Component Comment : Designator=C48 Old Comment=CAP 100nF 10V 0603(1608) New Comment=100nF
+Change Component Comment : Designator=C50 Old Comment=CAP 100nF 10V 0603(1608) New Comment=100nF
+Change Component Comment : Designator=C51 Old Comment=CAP 100nF 10V 0603(1608) New Comment=100nF
+Change Component Comment : Designator=C58 Old Comment=CAP 100nF 10V 0603(1608) New Comment=100nF
+Change Component Comment : Designator=C36 Old Comment=CAP 100nF 50V 0603(1608) New Comment=100nF
+Change Component Comment : Designator=C38 Old Comment=CAP 100nF 50V 0603(1608) New Comment=100nF
+Change Component Comment : Designator=C40 Old Comment=CAP 100nF 50V 0603(1608) New Comment=100nF
+Change Component Comment : Designator=C42 Old Comment=CAP 100nF 50V 0603(1608) New Comment=100nF
+Change Component Comment : Designator=C56 Old Comment=CAP 470pF 50V 0603(1608) New Comment=470pF
+Change Component Comment : Designator=R54 Old Comment=Jumper 0603(1608) New Comment=Jumper
+Change Component Comment : Designator=R63 Old Comment=Jumper 0603(1608) New Comment=Jumper
+Change Component Comment : Designator=R65 Old Comment=Jumper 0603(1608) New Comment=Jumper
+Change Component Comment : Designator=R72 Old Comment=Jumper 0603(1608) New Comment=Jumper
+Change Component Comment : Designator=R73 Old Comment=Jumper 0603(1608) New Comment=Jumper
+Change Component Comment : Designator=R75 Old Comment=Jumper 0603(1608) New Comment=Jumper
+Change Component Comment : Designator=R82 Old Comment=Jumper 0603(1608) New Comment=Jumper
+Change Component Comment : Designator=R85 Old Comment=Jumper 0603(1608) New Comment=Jumper
+Change Component Comment : Designator=R92 Old Comment=Jumper 0603(1608) New Comment=Jumper
+Change Component Comment : Designator=R150 Old Comment=Jumper 0603(1608) New Comment=Jumper
+Change Component Comment : Designator=R154 Old Comment=Jumper 0603(1608) New Comment=Jumper
+Change Component Comment : Designator=R155 Old Comment=Jumper 0603(1608) New Comment=Jumper
+Change Component Comment : Designator=R159 Old Comment=Jumper 0603(1608) New Comment=Jumper
+Change Component Comment : Designator=R161 Old Comment=Jumper 0603(1608) New Comment=Jumper
+Change Component Comment : Designator=R166 Old Comment=Jumper 0603(1608) New Comment=Jumper
+Change Component Description : Designator=U2 Old Description=The A5975D is a step-down monolithic power
+switching regulator with a minimum switch current
+limit of 3.75 A, it is therefore able to deliver up to 3
+A DC current to the load depending on the
+application conditions. The output voltage can be
+set from 1.235 V to 35 V. The high current level is
+also achieved thanks to a HSOP8 package with
+exposed frame, that allows to reduce the RTHJ-A
+down to approximately 40 °C/W. The device uses
+an internal P-channel DMOS transistor (with a
+typical RDS(on) of 250 mO) as switching element
+to minimize the size of the external components.
+An internal oscillator fixes the switching frequency
+at 250 kHz. Having a minimum input voltage of
+only 4 V, it fits automotive applications requiring
+device operation even in cold crank conditions.
+Pulse-by-pulse current limit with the internal
+frequency modulation offers an effective constant
+current short-circuit protection. New Description=The A5975D is a step-down monolithic power
+switching regulator with a minimum switch current
+limit of 3.75 A, it is therefore able to deliver up to 3
+A DC current to the load depending on the
+application conditions. The output voltage can be
+set from 1.235 V to 35 V. The high current level is
+also achieved thanks to a HSOP8 package with
+exposed frame, that allows to reduce the RTHJ-A
+down to approximately 40 °C/W. The device uses
+an internal P-channel DMOS transistor (with a
+typical RDS(on) of 250 mO) as switching element
+to minimize the size of the external components.
+An internal oscillator fixes the switching frequency
+at 250 kHz. Having a minimum input voltage of
+only 4 V, it fits automotive applications requiring
+device operation even in cold crank conditions.
+Pulse-by-pulse current limit with the internal
+frequency modulation offers an effective constant
+current short-circuit protection.

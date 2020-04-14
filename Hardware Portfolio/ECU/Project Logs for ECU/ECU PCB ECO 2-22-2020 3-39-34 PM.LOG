@@ -1,0 +1,80 @@
+Removed Pin From Net: NetName=NetR20_2 Pin=R22-1
+Removed Pin From Net: NetName=NetR21_2 Pin=R23-1
+Removed Pin From Net: NetName=NetR40_2 Pin=R42-1
+Removed Pin From Net: NetName=NetR41_2 Pin=R43-1
+Removed Pin From Net: NetName=NetR98_2 Pin=R100-1
+Removed Pin From Net: NetName=NetR99_2 Pin=R101-1
+Removed Pin From Net: NetName=NetR118_2 Pin=R120-1
+Removed Pin From Net: NetName=NetR119_2 Pin=R121-1
+Removed Member From Class: ClassName=Low_Side_Drivers Member=R22
+Removed Member From Class: ClassName=Low_Side_Drivers Member=R23
+Removed Member From Class: ClassName=Low_Side_Drivers Member=R24
+Removed Member From Class: ClassName=Low_Side_Drivers Member=R25
+Removed Member From Class: ClassName=Low_Side_Drivers Member=R42
+Removed Member From Class: ClassName=Low_Side_Drivers Member=R43
+Removed Member From Class: ClassName=Low_Side_Drivers Member=R44
+Removed Member From Class: ClassName=Low_Side_Drivers Member=R45
+Removed Member From Class: ClassName=Push_Pull_Drivers Member=R100
+Removed Member From Class: ClassName=Push_Pull_Drivers Member=R101
+Removed Member From Class: ClassName=Push_Pull_Drivers Member=R106
+Removed Member From Class: ClassName=Push_Pull_Drivers Member=R107
+Removed Member From Class: ClassName=Push_Pull_Drivers Member=R120
+Removed Member From Class: ClassName=Push_Pull_Drivers Member=R121
+Removed Member From Class: ClassName=Push_Pull_Drivers Member=R126
+Removed Member From Class: ClassName=Push_Pull_Drivers Member=R127
+Added Pin To Net: NetName=NetR20_2 Pin=TP7-1
+Added Pin To Net: NetName=NetR21_2 Pin=TP8-1
+Added Pin To Net: NetName=NetR40_2 Pin=TP11-1
+Added Pin To Net: NetName=NetR41_2 Pin=TP12-1
+Added Pin To Net: NetName=NetR98_2 Pin=TP23-1
+Added Pin To Net: NetName=NetR99_2 Pin=TP24-1
+Added Pin To Net: NetName=NetR118_2 Pin=TP27-1
+Added Pin To Net: NetName=NetR119_2 Pin=TP28-1
+Added Pin To Net: NetName=NetR20_2 Pin=U6-2
+Added Pin To Net: NetName=NetR21_2 Pin=U7-2
+Added Pin To Net: NetName=NetR40_2 Pin=U8-2
+Added Pin To Net: NetName=NetR41_2 Pin=U9-2
+Added Pin To Net: NetName=NetR98_2 Pin=U12-2
+Added Pin To Net: NetName=NetR99_2 Pin=U13-2
+Added Pin To Net: NetName=NetR118_2 Pin=U14-2
+Added Pin To Net: NetName=NetR119_2 Pin=U15-2
+Added Pin To Net: NetName=NetR28_2 Pin=R28-2
+Added Pin To Net: NetName=NetR28_2 Pin=TP9-1
+Added Pin To Net: NetName=NetR28_2 Pin=U1-67
+Added Pin To Net: NetName=NetR28_2 Pin=U6-4
+Added Net: Name=NetR28_2
+Added Pin To Net: NetName=NetR29_2 Pin=R29-2
+Added Pin To Net: NetName=NetR29_2 Pin=TP10-1
+Added Pin To Net: NetName=NetR29_2 Pin=U1-65
+Added Pin To Net: NetName=NetR29_2 Pin=U7-4
+Added Net: Name=NetR29_2
+Added Pin To Net: NetName=NetR48_2 Pin=R48-2
+Added Pin To Net: NetName=NetR48_2 Pin=TP13-1
+Added Pin To Net: NetName=NetR48_2 Pin=U1-61
+Added Pin To Net: NetName=NetR48_2 Pin=U8-4
+Added Net: Name=NetR48_2
+Added Pin To Net: NetName=NetR49_2 Pin=R49-2
+Added Pin To Net: NetName=NetR49_2 Pin=TP14-1
+Added Pin To Net: NetName=NetR49_2 Pin=U1-59
+Added Pin To Net: NetName=NetR49_2 Pin=U9-4
+Added Net: Name=NetR49_2
+Added Pin To Net: NetName=NetR110_2 Pin=R110-2
+Added Pin To Net: NetName=NetR110_2 Pin=TP25-1
+Added Pin To Net: NetName=NetR110_2 Pin=U1-92
+Added Pin To Net: NetName=NetR110_2 Pin=U12-4
+Added Net: Name=NetR110_2
+Added Pin To Net: NetName=NetR111_2 Pin=R111-2
+Added Pin To Net: NetName=NetR111_2 Pin=TP26-1
+Added Pin To Net: NetName=NetR111_2 Pin=U1-94
+Added Pin To Net: NetName=NetR111_2 Pin=U13-4
+Added Net: Name=NetR111_2
+Added Pin To Net: NetName=NetR130_2 Pin=R130-2
+Added Pin To Net: NetName=NetR130_2 Pin=TP29-1
+Added Pin To Net: NetName=NetR130_2 Pin=U1-2
+Added Pin To Net: NetName=NetR130_2 Pin=U14-4
+Added Net: Name=NetR130_2
+Added Pin To Net: NetName=NetR131_2 Pin=R131-2
+Added Pin To Net: NetName=NetR131_2 Pin=TP30-1
+Added Pin To Net: NetName=NetR131_2 Pin=U1-4
+Added Pin To Net: NetName=NetR131_2 Pin=U15-4
+Added Net: Name=NetR131_2

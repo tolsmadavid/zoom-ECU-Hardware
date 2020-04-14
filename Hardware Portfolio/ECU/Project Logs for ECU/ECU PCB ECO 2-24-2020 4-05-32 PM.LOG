@@ -1,0 +1,64 @@
+Removed Pin From Net: NetName=12V Pin=U18-4
+Removed Pin From Net: NetName=12V Pin=U18-11
+Removed Pin From Net: NetName=GND Pin=U18-14
+Removed Pin From Net: NetName=3V3 Pin=U18-16
+Removed Pin From Net: NetName=3V3 Pin=U18-17
+Removed Pin From Net: NetName=GND Pin=U18-28
+Removed Pin From Net: NetName=GND Pin=U18-29
+Removed Member From Class: ClassName=Op_Amp_Sig_Process_Off-Board_Connector_Etc Member=U18
+Added Component: Designator=*(DRV8825)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=12V Pin=*-4
+Added Pin To Net: NetName=12V Pin=*-11
+Added Pin To Net: NetName=GND Pin=*-14
+Added Pin To Net: NetName=3V3 Pin=*-16
+Added Pin To Net: NetName=3V3 Pin=*-17
+Added Pin To Net: NetName=GND Pin=*-28
+Added Pin To Net: NetName=GND Pin=*-29
+Added Pin To Net: NetName=Net*_1 Pin=*-1
+Added Pin To Net: NetName=Net*_1 Pin=C46-1
+Added Net: Name=Net*_1
+Added Pin To Net: NetName=Net*_2 Pin=*-2
+Added Pin To Net: NetName=Net*_2 Pin=C46-2
+Added Net: Name=Net*_2
+Added Pin To Net: NetName=Net*_3 Pin=*-3
+Added Pin To Net: NetName=Net*_3 Pin=C47-2
+Added Pin To Net: NetName=Net*_3 Pin=R132-1
+Added Net: Name=Net*_3
+Added Pin To Net: NetName=Net*_5 Pin=*-5
+Added Pin To Net: NetName=Net*_5 Pin=J3-30
+Added Net: Name=Net*_5
+Added Pin To Net: NetName=Net*_6 Pin=*-6
+Added Pin To Net: NetName=Net*_6 Pin=R127-2
+Added Net: Name=Net*_6
+Added Pin To Net: NetName=Net*_7 Pin=*-7
+Added Pin To Net: NetName=Net*_7 Pin=J3-32
+Added Net: Name=Net*_7
+Added Pin To Net: NetName=Net*_8 Pin=*-8
+Added Pin To Net: NetName=Net*_8 Pin=J3-1
+Added Net: Name=Net*_8
+Added Pin To Net: NetName=Net*_9 Pin=*-9
+Added Pin To Net: NetName=Net*_9 Pin=R130-2
+Added Net: Name=Net*_9
+Added Pin To Net: NetName=Net*_10 Pin=*-10
+Added Pin To Net: NetName=Net*_10 Pin=J3-4
+Added Net: Name=Net*_10
+Added Pin To Net: NetName=Net*_12 Pin=*-12
+Added Pin To Net: NetName=Net*_12 Pin=*-13
+Added Pin To Net: NetName=Net*_12 Pin=R131-1
+Added Pin To Net: NetName=Net*_12 Pin=R133-1
+Added Net: Name=Net*_12
+Added Pin To Net: NetName=Net*_15 Pin=*-15
+Added Pin To Net: NetName=Net*_15 Pin=C48-2
+Added Pin To Net: NetName=Net*_15 Pin=R131-2
+Added Net: Name=Net*_15
+Added Pin To Net: NetName=Net*_20 Pin=*-20
+Added Pin To Net: NetName=Net*_20 Pin=U1-18
+Added Net: Name=Net*_20
+Added Pin To Net: NetName=Net*_21 Pin=*-21
+Added Pin To Net: NetName=Net*_21 Pin=U1-17
+Added Net: Name=Net*_21
+Added Pin To Net: NetName=Net*_22 Pin=*-22
+Added Pin To Net: NetName=Net*_22 Pin=U1-19
+Added Net: Name=Net*_22
+Added Member To Class: ClassName=Op_Amp_Sig_Process_Off-Board_Connector_Etc Member=Component * DRV825
